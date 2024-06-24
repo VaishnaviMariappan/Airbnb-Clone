@@ -1,0 +1,120 @@
+.scroll-btn {
+  background: var(--white);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 38%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: var(--black);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-btn:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.scroll-btn.left {
+  left: 0.5rem;
+}
+
+.scroll-btn.right {
+  right: 0.5rem;
+}
+
+.filter-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  padding: 1rem 3rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.filter-div::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* Base Styles */
+:root {
+  --black: #000;
+  --grey: #ddd;
+  --font-grey: #717171;
+  --white: #ffffff;
+  --theme: #ff385c;
+  --light-grey: #f7f7f7;
+}
+
+.filter-div {
+  border-top: 1px solid var(--grey);
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+}
+
+.links-box {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+  opacity: 0.5;
+  border-bottom: 1px solid var(--white);
+  min-width: 85px;
+  white-space: normal;
+  cursor: pointer;
+}
+
+.links-box:hover,
+.selected-box {
+  opacity: 1;
+  border-bottom: 1px solid var(--black);
+  transition: all 0.3s;
+}
+
+.links-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.links-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--font-grey);
+}
+
+.selected-label {
+  color: var(--black);
+}
+
+@media only screen and (max-width: 800px) {
+  .filter-div {
+    padding: 0.5rem;
+    padding-top: 1.5rem;
+  }
+}
